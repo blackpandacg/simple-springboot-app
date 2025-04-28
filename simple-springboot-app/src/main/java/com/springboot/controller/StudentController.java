@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.text.StringEscapeUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -20,6 +21,7 @@ public class StudentController {
 		if (StringUtils.isBlank(student.getLastName())) {
 			throw new InvalidFieldException("Last Name is a required field");
 		}
-		return String.format("Authorization %s is valid, and Data is saved", authorization);
+		String sanitizedAuthorization = org.apache.commons.text.StringEscapeUtils.escapeHtml4(authorization);
+		return String.format("Authorization %s is valid, and Data is saved", sanitizedAuthorization);
 	}
 }

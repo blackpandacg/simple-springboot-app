@@ -43,6 +43,9 @@ jobs:
           working-directory: ./simple-springboot-app 
           sonar-project-key: blackpandacg_simple-springboot-app
           sonar-token: ${{ secrets.SONAR_TOKEN }}
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+          
       - name: Build Docker image
         run: |
           docker build -t shubhamcg1234/simple-springboot-app .

@@ -25,4 +25,10 @@ jobs:
       - name: List files
         working-directory: ./simple-springboot-app
         run: ls -ls
+          docker build -t shubhamcg1234/simple-springboot-app .
+           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+           docker push shubhamcg1234/simple-springboot-app
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 

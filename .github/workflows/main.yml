@@ -38,6 +38,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=blackpandacg_simple-springboot-app -Dsonar.coverage.exclusions="**/*Tests.java"
       - name: Upload SonarCloud results to GitHub
+        working-directory: ./simple-springboot-app 
         uses: sonarsource/sonarcloud-github-action@v1
         with:
           sonar-project-key: blackpandacg_simple-springboot-app

@@ -19,6 +19,8 @@ jobs:
           distribution: temurin
       - name: Change to the subdirectory
         run: cd simple-springboot-app  
+      - name: List files
+        run: ls -al
       - name: Build with Maven
         run: mvn clean install -DskipTests
       - name: Run tests

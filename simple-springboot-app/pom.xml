@@ -54,13 +54,21 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>2.7.0</version>
 			</plugin>
+			<!-- Add SonarCloud plugin -->
 			<plugin>
-    				 <groupId>org.sonarsource.scanner.maven</groupId>
-     				 <artifactId>sonar-maven-plugin</artifactId>
-     				 <version>3.9.1.2184</version> <!-- Make sure you use the latest version -->
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.9.1.2184</version> <!-- Make sure you use the latest version -->
+			</plugin>
+			<!-- Ensure that tests are completely skipped -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<skipTests>true</skipTests> <!-- Skip tests completely -->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>

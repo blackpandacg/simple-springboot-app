@@ -10,7 +10,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   call-reusable-workflow:
-    uses: blackpandacg/simple-springboot-app/.github/workflows/main.yml@main
+    uses: ./.github/workflows/main.yml
     with:
       java-version: '17'
       maven-dir: './simple-springboot-app'

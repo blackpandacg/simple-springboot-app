@@ -11,7 +11,13 @@ on:
         required: false
         type: string
         default: './simple-springboot-app'
-
+    secrets:
+      SONAR_TOKEN:
+        required: true
+      DOCKER_USERNAME:
+        required: true
+      DOCKER_PASSWORD:
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest

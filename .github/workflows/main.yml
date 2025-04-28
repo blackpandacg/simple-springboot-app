@@ -23,7 +23,7 @@ jobs:
         run: cd simple-springboot-app
       - name: Build with Maven
         working-directory: ./simple-springboot-app 
-        run: mvn clean install
+        run: mvn clean install -DskipTests
       - name: Run tests
         working-directory: ./simple-springboot-app
         run: mvn test

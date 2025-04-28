@@ -18,7 +18,9 @@ jobs:
           java-version: '11'
           distribution: temurin
       - name: Change to the subdirectory
-        run: cd simple-springboot-app/simple-springboot-app/  
+        run: cd simple-springboot-app/
+      - name : list running folder
+        run: pwd
       - name: List files
         run: ls -al
       - name: Build with Maven

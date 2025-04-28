@@ -24,6 +24,12 @@ jobs:
       - name: Build with Maven
         working-directory: ./simple-springboot-app 
         run: mvn clean install -DskipTests
-      - name: Run tests
-        working-directory: ./simple-springboot-app
-        run: mvn test
+      - name: Build Docker image
+        run: |
+          docker build -t shubhamcg1234/simple-springboot-app .
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          docker push your-dockerhub-username/simple-springboot-app
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+

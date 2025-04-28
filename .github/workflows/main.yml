@@ -20,7 +20,7 @@ jobs:
       - name : list running folder
         run: pwd
       - name: List files
-        run: ls -al
+        run: cd simple-springboot-app
       - name: Build with Maven
         run: mvn clean install -DskipTests
       - name: Run tests

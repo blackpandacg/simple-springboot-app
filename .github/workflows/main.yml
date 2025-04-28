@@ -1,6 +1,4 @@
-# .github/workflows/build-and-test-springboot.yml
-
-name: Build and Test Spring Boot Application
+name: Build and Test Spring Boot Application - Reusable
 
 on:
   workflow_call:

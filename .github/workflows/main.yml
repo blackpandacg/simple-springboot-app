@@ -22,7 +22,7 @@ jobs:
         run: pwd
       - name: Build with Maven
         working-directory: ./simple-springboot-app 
-        run: mvn clean package -DskipTests
+        run: mvn clean package -Dmaven.test.skip=true
       - name: List files
         working-directory: ./simple-springboot-app
         run: ls -ls

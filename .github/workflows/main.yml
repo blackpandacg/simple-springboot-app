@@ -18,6 +18,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Verify Java version
+        run: java -version
       - name : list running folder
         run: pwd
       - name: Build with Maven

@@ -34,16 +34,7 @@ jobs:
         working-directory: ./simple-springboot-app 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=blackpandacg_simple-springboot-app -Dsonar.coverage.exclusions="**/*Tests.java"
-      - name: Upload SonarCloud results to GitHub
-        uses: sonarsource/sonarcloud-github-action@v1
-        with:
-          working-directory: ./simple-springboot-app 
-          sonar-project-key: blackpandacg_simple-springboot-app
-          sonar-token: ${{ secrets.SONAR_TOKEN }}
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
-          
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=blackpandacg_simple-springboot-app -Dsonar.coverage.exclusions="**/*Tests.java"   
       - name: Build Docker image
         run: |
           docker build -t shubhamcg1234/simple-springboot-app .

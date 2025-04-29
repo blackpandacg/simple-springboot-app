@@ -38,6 +38,12 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=blackpandacg_simple-springboot-app -Dsonar.coverage.exclusions="**/*Tests.java"   
+      - name: Add SonarQube Link to Summary
+        run: |
+          echo "## SonarQube Analysis Results" >> $GITHUB_STEP_SUMMARY
+          echo "<a href='https://sonarcloud.io/projects/blackpandacg_simple-springboot-app/issues'>View SonarQube analysis</a>" >> $GITHUB_STEP_SUMMARY
+          echo "You can also view the analysis on the SonarQube dashboard." >> $GITHUB_STEP_SUMMARY
+          echo "Analysis completed. Please review the SonarQube project for detailed insights." >> $GITHUB_STEP_SUMMARY
       - name: Build Docker image
         run: |
           docker build -t shubhamcg1234/simple-springboot-app .

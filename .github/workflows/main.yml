@@ -41,7 +41,7 @@ jobs:
       - name: Add SonarQube Link to Summary
         run: |
           echo "## SonarQube Analysis Results" >> $GITHUB_STEP_SUMMARY
-          echo "<a href='https://sonarcloud.io/projects/simple-springboot-app/issues'>View SonarQube analysis</a>" >> $GITHUB_STEP_SUMMARY
+          echo "<a href='https://sonarcloud.io/project/issues?id=blackpandacg_simple-springboot-app'>View SonarQube analysis</a>" >> $GITHUB_STEP_SUMMARY
           echo "You can also view the analysis on the SonarQube dashboard." >> $GITHUB_STEP_SUMMARY
           echo "Analysis completed. Please review the SonarQube project for detailed insights." >> $GITHUB_STEP_SUMMARY
       - name: Build Docker image
